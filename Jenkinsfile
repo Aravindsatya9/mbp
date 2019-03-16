@@ -10,7 +10,7 @@ node('master')
    }
    stage('ContinuousDeployment')
    {
-       sh label: '', script: ' scp /home/ubuntu/.jenkins/workspace/mbp_master/webapp/target/webapp.war ubuntu@172.31.18.240:/var/lib/tomcat8/webapps/qaenv.war'
+       sh label: '', script: ' scp /home/ubuntu/.jenkins/workspace/mul_master/webapp/target/webapp.war ubuntu@172.31.18.240:/var/lib/tomcat8/webapps/qaenv.war'
    }
    stage('ContinuousTesting')
    {
@@ -18,7 +18,7 @@ node('master')
    }
    stage('ContinuousDelivery')
    {
-       sh label: '', script: ' scp /home/ubuntu/.jenkins/workspace/mbp_master/webapp/target/webapp.war ubuntu@172.31.37.128:/var/lib/tomcat8/webapps/prodenv.war'
+       sh label: '', script: ' scp /home/ubuntu/.jenkins/workspace/mul_master/webapp/target/webapp.war ubuntu@172.31.37.128:/var/lib/tomcat8/webapps/masterprodenv.war'
    }
    
    
